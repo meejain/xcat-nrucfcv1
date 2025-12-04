@@ -691,6 +691,22 @@ async function loadSections(element) {
   }
 }
 
+/**
+ * Fetches placeholders from /placeholders.json
+ * @returns {Promise<Object>} The placeholders object
+ */
+async function fetchPlaceholders() {
+  if (!window.placeholders) {
+    try {
+      const resp = await fetch('/placeholders.json');
+      window.placeholders = await resp.json();
+    } catch (err) {
+      window.placeholders = {};
+    }
+  }
+  return window.placeholders;
+}
+
 init();
 
 export {
@@ -702,6 +718,7 @@ export {
   decorateIcons,
   decorateSections,
   decorateTemplateAndTheme,
+  fetchPlaceholders,
   getMetadata,
   loadBlock,
   loadCSS,
