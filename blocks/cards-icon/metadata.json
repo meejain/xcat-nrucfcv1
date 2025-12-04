@@ -1,0 +1,41 @@
+{
+  "variantName": "cards-icon",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2025-12-04T18:59:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.nrucfc.coop/",
+    "originPage": "homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "service-features",
+    "imagePattern": "icons"
+  },
+  "contentPattern": {
+    "structure": "icon + text label",
+    "buttonCount": 0,
+    "imageCount": 4
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "service cards",
+      "feature grids with icons",
+      "category navigation"
+    ],
+    "notSuitableFor": [
+      "content-heavy cards",
+      "testimonials",
+      "product listings"
+    ]
+  },
+  "usage": {
+    "pagesUsing": [
+      "content/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2025-12-04T18:59:00.000Z"
+  }
+}

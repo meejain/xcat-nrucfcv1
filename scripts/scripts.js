@@ -138,6 +138,23 @@ function loadDelayed() {
   // load anything that can be postponed to the latest here
 }
 
+/**
+ * Moves instrumentation attributes from one element to another
+ * @param {Element} source The source element
+ * @param {Element} target The target element
+ */
+function moveInstrumentation(source, target) {
+  if (!source || !target) return;
+
+  // Move data attributes that start with 'data-aue-' or 'data-hlx-'
+  [...source.attributes].forEach((attr) => {
+    if (attr.name.startsWith('data-aue-') || attr.name.startsWith('data-hlx-')) {
+      target.setAttribute(attr.name, attr.value);
+      source.removeAttribute(attr.name);
+    }
+  });
+}
+
 async function loadPage() {
   await loadEager(document);
   await loadLazy(document);
@@ -145,3 +162,5 @@ async function loadPage() {
 }
 
 loadPage();
+
+export { moveInstrumentation };
