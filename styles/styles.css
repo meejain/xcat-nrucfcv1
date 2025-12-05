@@ -255,3 +255,118 @@ main .section.highlight {
   margin: 0;
   padding: 40px 0;
 }
+
+main .section.blue-banner {
+  background-color: rgb(0, 82, 136);
+  color: white;
+  margin: 0;
+  padding: 32px 24px;
+  text-align: center;
+}
+
+main .section.blue-banner p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+main .section.blue-banner strong {
+  font-weight: 400;
+}
+
+main .section.blue-banner a {
+  color: white;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+main .section.blue-banner a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+@media (width >= 900px) {
+  main .section.blue-banner {
+    padding: 40px 32px;
+  }
+
+  main .section.blue-banner p {
+    font-size: 20px;
+  }
+}
+
+main .section.mission-orange {
+  background-color: rgb(207, 112, 25);
+  color: white;
+  margin: 0;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+main .section.mission-orange h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: white;
+}
+
+main .section.mission-orange p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  color: white;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (width >= 900px) {
+  main .section.mission-orange {
+    padding: 80px 32px;
+  }
+
+  main .section.mission-orange h2 {
+    font-size: 32px;
+  }
+
+  main .section.mission-orange p {
+    font-size: 20px;
+  }
+}
+
+/* Work With Us section styling */
+main .section:has(.cards-icon) {
+  text-align: center;
+  padding: 60px 24px;
+  background-color: #f8f8f8;
+  margin: 0;
+}
+
+main .section:has(.cards-icon) h2 {
+  color: rgb(207, 112, 25);
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+main .section:has(.cards-icon) p {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+@media (width >= 900px) {
+  main .section:has(.cards-icon) {
+    padding: 80px 32px;
+  }
+
+  main .section:has(.cards-icon) h2 {
+    font-size: 32px;
+  }
+
+  main .section:has(.cards-icon) p {
+    font-size: 20px;
+  }
+}
