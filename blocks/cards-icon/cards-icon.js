@@ -8,10 +8,31 @@ export default function decorate(block) {
     const li = document.createElement('li');
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
+
+    // Split image and text into separate divs
     [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-icon-card-image';
-      else div.className = 'cards-icon-card-body';
+      const picture = div.querySelector('picture');
+      const strong = div.querySelector('strong');
+
+      if (picture && strong) {
+        // Create separate divs for image and body
+        const imageDiv = document.createElement('div');
+        imageDiv.className = 'cards-icon-card-image';
+        imageDiv.append(picture);
+
+        const bodyDiv = document.createElement('div');
+        bodyDiv.className = 'cards-icon-card-body';
+        bodyDiv.append(strong);
+
+        // Replace original div with new structure
+        div.replaceWith(imageDiv, bodyDiv);
+      } else if (picture) {
+        div.className = 'cards-icon-card-image';
+      } else {
+        div.className = 'cards-icon-card-body';
+      }
     });
+
     ul.append(li);
   });
   ul.querySelectorAll('picture > img').forEach((img) => {
