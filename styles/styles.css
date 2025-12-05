@@ -286,6 +286,10 @@ main .section.blue-banner a:hover {
   text-decoration: none;
 }
 
+main .section.blue-banner + .section {
+  margin-top: 0;
+}
+
 @media (width >= 900px) {
   main .section.blue-banner {
     padding: 40px 32px;
