@@ -8,8 +8,22 @@ import { loadFragment } from '../fragment/fragment.js';
 export default async function decorate(block) {
   // load footer as fragment
   const footerMeta = getMetadata('footer');
-  const footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/content/footer';
-  const fragment = await loadFragment(footerPath);
+  let footerPath = footerMeta ? new URL(footerMeta, window.location).pathname : '/content/footer';
+
+  // Try loading the fragment
+  let fragment = await loadFragment(footerPath);
+
+  // If fragment failed to load and we have a path starting with /content/, try without /content/
+  if (!fragment && footerPath.startsWith('/content/')) {
+    footerPath = footerPath.replace('/content/', '/');
+    fragment = await loadFragment(footerPath);
+  }
+
+  // If still failed to load, try /footer as fallback
+  if (!fragment && footerPath !== '/footer') {
+    footerPath = '/footer';
+    fragment = await loadFragment(footerPath);
+  }
 
   // If fragment failed to load, exit gracefully
   if (!fragment) {
