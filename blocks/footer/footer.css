@@ -1,6 +1,7 @@
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: rgb(0, 82, 136);
+  color: white;
+  font-size: 14px;
 }
 
 footer .footer > div {
@@ -11,10 +12,92 @@ footer .footer > div {
 
 footer .footer p {
   margin: 0;
+  line-height: 1.6;
+}
+
+footer .footer .footer-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+footer .footer .footer-column h2,
+footer .footer .footer-column h3 {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin-top: 0;
+  line-height: 1.4;
+}
+
+footer .footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footer li {
+  margin-bottom: 8px;
+}
+
+footer .footer a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+footer .footer a:hover {
+  text-decoration: underline;
+}
+
+footer .footer .footer-legal {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 24px;
+  margin-top: 32px;
+  text-align: center;
+}
+
+footer .footer .footer-legal p {
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+footer .footer .footer-legal a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+footer .footer .footer-legal a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 768px) {
+  footer .footer .footer-nav {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 60px 32px 40px;
+  }
+
+  footer .footer .footer-nav {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+  }
+
+  footer .footer .footer-column h2,
+  footer .footer .footer-column h3 {
+    font-size: 16px;
+  }
+
+  footer .footer a {
+    font-size: 14px;
   }
 }
