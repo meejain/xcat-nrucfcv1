@@ -53,6 +53,38 @@ footer .footer a:hover {
   text-decoration: underline;
 }
 
+/* Footer column strong headings (Events & Training, Join Our Community) */
+footer .footer .footer-column strong {
+  display: block;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* Social media icons */
+footer .footer a img[src*="facebook"],
+footer .footer a img[src*="linkedin"] {
+  width: 36px;
+  height: 36px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+footer .footer a:has(img[src*="facebook"]),
+footer .footer a:has(img[src*="linkedin"]) {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+footer .footer a:has(img[src*="facebook"]):hover,
+footer .footer a:has(img[src*="linkedin"]):hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
 footer .footer .footer-legal {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 24px;
@@ -88,7 +120,7 @@ footer .footer .footer-legal a:hover {
   }
 
   footer .footer .footer-nav {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
   }
 

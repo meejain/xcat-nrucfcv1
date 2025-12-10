@@ -51,10 +51,12 @@ export default async function decorate(block) {
     // Add the heading
     column.appendChild(heading.cloneNode(true));
 
-    // Add the following ul if exists
+    // Add the following elements (ul and p) until we hit another heading or hr
     let nextElement = heading.nextElementSibling;
-    while (nextElement && nextElement.tagName === 'UL') {
-      column.appendChild(nextElement.cloneNode(true));
+    while (nextElement && nextElement.tagName !== 'H2' && nextElement.tagName !== 'H3' && nextElement.tagName !== 'HR') {
+      if (nextElement.tagName === 'UL' || nextElement.tagName === 'P') {
+        column.appendChild(nextElement.cloneNode(true));
+      }
       nextElement = nextElement.nextElementSibling;
     }
 
