@@ -37,8 +37,8 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  min-height: 400px;
-  max-height: 500px;
+  min-height: 300px;
+  max-height: 350px;
 }
 
 .carousel-feature .carousel-feature-slide:has(.carousel-feature-slide-content[data-align='center']) {
