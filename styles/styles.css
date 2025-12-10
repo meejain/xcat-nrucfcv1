@@ -229,7 +229,7 @@ main img {
 
 /* sections */
 main > .section {
-  margin: 40px 0;
+  margin: 30px 0;
 }
 
 main > .section > div {
@@ -253,14 +253,14 @@ main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
-  padding: 40px 0;
+  padding: 30px 0;
 }
 
 main .section.blue-banner {
   background-color: rgb(0, 82, 136);
   color: white;
   margin: 0;
-  padding: 32px 24px;
+  padding: 24px 24px;
   text-align: center;
 }
 
@@ -292,7 +292,7 @@ main .section.blue-banner + .section {
 
 @media (width >= 900px) {
   main .section.blue-banner {
-    padding: 40px 32px;
+    padding: 28px 32px;
   }
 
   main .section.blue-banner p {
@@ -304,7 +304,7 @@ main .section.mission-orange {
   background-color: rgb(207, 112, 25);
   color: white;
   margin: 0;
-  padding: 60px 24px;
+  padding: 40px 24px;
   text-align: center;
 }
 
@@ -328,7 +328,7 @@ main .section.mission-orange p {
 
 @media (width >= 900px) {
   main .section.mission-orange {
-    padding: 80px 32px;
+    padding: 50px 32px;
   }
 
   main .section.mission-orange h2 {
@@ -343,7 +343,7 @@ main .section.mission-orange p {
 /* Work With Us section styling */
 main .section:has(.cards-icon) {
   text-align: center;
-  padding: 60px 24px;
+  padding: 40px 24px;
   background-color: #f8f8f8;
   margin: 0;
 }
@@ -363,7 +363,7 @@ main .section:has(.cards-icon) p {
 
 @media (width >= 900px) {
   main .section:has(.cards-icon) {
-    padding: 80px 32px;
+    padding: 50px 32px;
   }
 
   main .section:has(.cards-icon) h2 {
