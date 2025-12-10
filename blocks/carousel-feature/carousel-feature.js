@@ -91,6 +91,32 @@ function createSlide(row, slideIndex, carouselId) {
 }
 
 let carouselId = 0;
+
+function startAutoPlay(block, interval = 3000) {
+  const autoPlayInterval = setInterval(() => {
+    const currentSlide = parseInt(block.dataset.activeSlide, 10);
+    const slides = block.querySelectorAll('.carousel-feature-slide');
+    const nextSlide = (currentSlide + 1) % slides.length;
+    showSlide(block, nextSlide);
+  }, interval);
+
+  // Store interval ID on block for cleanup
+  block.dataset.autoPlayInterval = autoPlayInterval;
+
+  // Pause auto-play on hover
+  block.addEventListener('mouseenter', () => {
+    clearInterval(block.dataset.autoPlayInterval);
+  });
+
+  // Resume auto-play on mouse leave
+  block.addEventListener('mouseleave', () => {
+    clearInterval(block.dataset.autoPlayInterval);
+    block.dataset.autoPlayInterval = startAutoPlay(block, interval);
+  });
+
+  return autoPlayInterval;
+}
+
 export default async function decorate(block) {
   carouselId += 1;
   block.setAttribute('id', `carousel-feature-${carouselId}`);
@@ -150,5 +176,9 @@ export default async function decorate(block) {
 
   if (!isSingleSlide) {
     bindEvents(block);
+    // Start auto-play after a short delay to ensure everything is initialized
+    setTimeout(() => {
+      startAutoPlay(block, 3000);
+    }, 100);
   }
 }
