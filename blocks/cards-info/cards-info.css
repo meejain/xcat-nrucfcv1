@@ -31,7 +31,12 @@
   aspect-ratio: 4 / 3;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+}
+
+.cards-info .cards-info-card-body > p br:first-child,
+.cards-info .cards-info-card-body > p br:first-child + br {
+  display: none;
 }
 
 .cards-info .cards-info-card-body strong,
@@ -41,8 +46,8 @@
   font-weight: 700;
   display: block;
   line-height: normal;
-  margin-top: 16px;
-  padding: 0;
+  margin-top: 0;
+  padding: 16px 0 0 0;
 }
 
 .cards-info .cards-info-card-body strong a {
